@@ -2,8 +2,8 @@
 
 Minecraft server utility plugin for Spigot-compatible servers. Built with Gradle and Java 17.
 
-<a href="https://github.com/fadhlanel/Still-Thinking-of-a-Name/releases/latest"><img src="https://img.shields.io/github/v/release/fadhlanel/Still-Thinking-of-a-Name" alt="Latest release" height="32"></a>
-<a href="https://github.com/fadhlanel/Still-Thinking-of-a-Name/actions/workflows/release.yml"><img src="https://github.com/fadhlanel/Still-Thinking-of-a-Name/actions/workflows/release.yml/badge.svg" alt="Release workflow status" height="32"></a>
+[![GitHub Release](https://img.shields.io/github/v/release/fadhlanel/Still-Thinking-of-a-Name?style=for-the-badge)](https://github.com/fadhlanel/Still-Thinking-of-a-Name/releases)
+[![Build](https://img.shields.io/github/actions/workflow/status/fadhlanel/Still-Thinking-of-a-Name/release.yml?label=build&style=for-the-badge)](https://github.com/fadhlanel/Still-Thinking-of-a-Name/actions/workflows/release.yml)
 
 ## Features
 
