@@ -12,8 +12,10 @@ public final class WelcomeListener implements Listener {
     private final StarterKitService kit;
     private final DeathLocationService death;
     private final UpdateChecker updates;
+    private final JavaPlugin plugin;
 
     public WelcomeListener(JavaPlugin p, BossBarService b, StarterKitService k, DeathLocationService d, UpdateChecker u) {
+        plugin = p;
         bar = b;
         kit = k;
         death = d;
@@ -32,6 +34,7 @@ public final class WelcomeListener implements Listener {
         }
         kit.join(q);
         updates.notifyIfAvailable(q);
+        if (q.isOp() && plugin.getConfig().getBoolean("auto-restart.blindness.enabled", true)) q.sendMessage(ChatColor.YELLOW + "Countdown blindness aktif. Gunakan /sar blindness off untuk mematikannya.");
         Firework f = q.getWorld().spawn(q.getLocation(), Firework.class);
         FireworkMeta m = f.getFireworkMeta();
         m.addEffect(FireworkEffect.builder()

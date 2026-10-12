@@ -40,8 +40,8 @@ Minecraft server utility plugin for Spigot-compatible servers. Built with Gradle
 | `/sk remove <target>` | Remove claimed status |
 | `/sk reset <target>` | Reset starter kit state |
 | `/sk reload` | Reload starter kit configuration |
-| `/autorestart` | Manage scheduled restarts |
-| `/pluginupdate` | Check plugin version and release link |
+| `/autorestart` | Manage scheduled restarts (`in 30m`, `blindness off`) |
+| `/nmmupdate` | Check plugin version and release link |
 
 `/autorestart` aliases: `/sar`, `/simpleautorestart`.
 
@@ -65,9 +65,9 @@ Configuration is stored in `src/main/resources/config.yml` and copied to the ser
 
 ## Update system
 
-On startup and every six hours, plugin asynchronously checks GitHub Releases API. Failed requests are ignored safely. No JAR is downloaded or replaced automatically.
+On startup and every six hours, plugin asynchronously checks GitHub Releases API and logs each check to console. Failed requests are ignored safely. No JAR is downloaded or replaced automatically.
 
-Operators with `masihmikirnamaplugin.update` receive an in-game notice on join when newer release exists. `/pluginupdate` shows current version, latest version, and download link.
+Operators with `masihmikirnamaplugin.update` receive an in-game notice on join when newer release exists. `/nmmupdate` shows current version, latest version, and download link.
 
 Latest releases: https://github.com/fadhlanel/Still-Thinking-of-a-Name/releases/latest
 
@@ -88,20 +88,6 @@ Plugin artifact:
 ```text
 build/libs/MasihMikirNamaPlugin.jar
 ```
-
-## Release
-
-Release workflow runs only for tags matching `v*.*.*`:
-
-```bash
-git add .
-git commit -m "Prepare release"
-git push origin main
-git tag v1.0.0
-git push origin v1.0.0
-```
-
-GitHub Actions builds the plugin, validates the exact plugin artifact, and publishes one GitHub Release asset. Failed builds do not create releases.
 
 ## Development
 

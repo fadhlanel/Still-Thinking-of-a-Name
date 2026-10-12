@@ -1,0 +1,36 @@
+name: MasihMikirNamaPlugin
+version: ${pluginVersion}
+main: com.stillthinkingofaname.welcome.StillThinkingOfaNameWelcome
+api-version: 1.13
+description: StillThinkingOfaName server utility plugin
+author: Admin
+
+commands:
+  togglebar:
+    description: Sembunyikan atau tampilkan HUD Bar StillThinkingOfaName
+    usage: /togglebar
+  returnlastdeath:
+    description: Kembali ke lokasi terakhir mati
+    usage: /returnlastdeath
+  starterkit:
+    description: Klaim starter kit untuk pemain baru
+    usage: /starterkit
+  sk:
+    description: StarterKit admin commands
+    usage: /sk [help|clone|give|remove|reset|reload]
+  autorestart:
+    description: Auto restart server
+    aliases: [sar, simpleautorestart]
+    usage: /autorestart <set|once|in|blindness|cancel|resume|clear|status|reload>
+    permission: masihmikirnamaplugin.autorestart
+  nmmupdate:
+    description: Check for plugin updates
+    usage: /nmmupdate
+    permission: masihmikirnamaplugin.update
+permissions:
+  masihmikirnamaplugin.autorestart:
+    description: Use auto restart commands
+    default: op
+  masihmikirnamaplugin.update:
+    description: Check for plugin updates
+    default: op

@@ -21,7 +21,7 @@ public final class StillThinkingOfaNameWelcome extends JavaPlugin {
         getCommand("starterkit").setExecutor(starterKit);
         getCommand("sk").setExecutor(starterKit);
         getCommand("returnlastdeath").setExecutor(death);
-        getCommand("pluginupdate").setExecutor(updates);
+        getCommand("nmmupdate").setExecutor(updates);
         updates.start();
         auto = new AutoRestartManager(this);
         auto.load();

@@ -21,11 +21,11 @@ commands:
   autorestart:
     description: Auto restart server
     aliases: [sar, simpleautorestart]
-    usage: /autorestart <set|once|cancel|resume|remove|clear|status|reload>
+    usage: /autorestart <set|once|in|blindness|cancel|resume|clear|status|reload>
     permission: masihmikirnamaplugin.autorestart
-  pluginupdate:
+  nmmupdate:
     description: Check for plugin updates
-    usage: /pluginupdate
+    usage: /nmmupdate
     permission: masihmikirnamaplugin.update
 permissions:
   masihmikirnamaplugin.autorestart:

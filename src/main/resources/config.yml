@@ -74,6 +74,10 @@ auto-restart:
   subtitles:
     "8": "&6Server Restarting"
 
+  # Apply blindness to every online player during countdown (5-1 seconds)
+  blindness:
+    enabled: true
+
   # Console commands run at restart time
   commands:
     - "restart"

@@ -38,6 +38,7 @@ public final class UpdateChecker implements CommandExecutor {
     public void check() {
         if (checking) return;
         checking = true;
+        plugin.getLogger().info("Checking for plugin updates...");
         HttpRequest request = HttpRequest.newBuilder(URI.create(API_URL))
                 .timeout(Duration.ofSeconds(10))
                 .header("Accept", "application/vnd.github+json")
@@ -48,9 +49,14 @@ public final class UpdateChecker implements CommandExecutor {
                 .thenApply(response -> response.statusCode() == 200 ? response.body() : "")
                 .thenAccept(body -> {
                     Matcher matcher = TAG_PATTERN.matcher(body);
-                    if (matcher.find()) latestVersion = normalize(matcher.group(1));
+                    if (matcher.find()) {
+                        latestVersion = normalize(matcher.group(1));
+                        plugin.getLogger().info("Plugin update check complete. Latest version: v" + latestVersion);
+                    } else {
+                        plugin.getLogger().warning("Plugin update check returned no release version.");
+                    }
                 })
-                .exceptionally(error -> null)
+                .exceptionally(error -> { plugin.getLogger().warning("Plugin update check failed: " + error.getMessage()); return null; })
                 .whenComplete((ignored, error) -> checking = false);
     }
 
