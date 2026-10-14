@@ -36,4 +36,5 @@ jobs:
         with:
           tag_name: ${{ github.ref_name }}
           generate_release_notes: true
+          append_body: false
           files: build/libs/MasihMikirNamaPlugin.jar
