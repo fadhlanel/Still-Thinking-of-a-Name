@@ -26,23 +26,23 @@ public final class DeathLocationService implements Listener, CommandExecutor {
         Player q = e.getEntity();
         Location l = q.getLocation();
         deaths.put(q.getUniqueId(), l);
-        q.sendMessage(ChatColor.RED + "☠ " + ChatColor.GRAY + "Kamu mati di koordinat: " + ChatColor.YELLOW + "X: " + l.getBlockX() + ", Y: " + l.getBlockY() + ", Z: " + l.getBlockZ());
-        q.sendMessage(ChatColor.AQUA + "Gunakan " + ChatColor.WHITE + "/returnlastdeath" + ChatColor.AQUA + " untuk kembali ke lokasi kematianmu.");
+        q.sendMessage(ChatColor.RED + "☠ " + ChatColor.GRAY + "You died at coordinates: " + ChatColor.YELLOW + "X: " + l.getBlockX() + ", Y: " + l.getBlockY() + ", Z: " + l.getBlockZ());
+        q.sendMessage(ChatColor.AQUA + "Use " + ChatColor.WHITE + "/returnlastdeath" + ChatColor.AQUA + " to return to your death location.");
     }
 
     @Override
     public boolean onCommand(CommandSender s, Command c, String l, String[] a) {
         if (!(s instanceof Player q)) {
-            s.sendMessage(ChatColor.RED + "Perintah ini hanya bisa digunakan oleh pemain!");
+            s.sendMessage(ChatColor.RED + "This command can only be used by players!");
             return true;
         }
         UUID id = q.getUniqueId();
         if (!deaths.containsKey(id)) {
-            q.sendMessage(ChatColor.RED + "Kamu belum memiliki lokasi kematian yang tersimpan.");
+            q.sendMessage(ChatColor.RED + "You do not have a saved death location.");
             return true;
         }
         if (!busy.add(id)) {
-            q.sendMessage(ChatColor.RED + "Kamu sedang dalam proses teleportasi!");
+            q.sendMessage(ChatColor.RED + "You are already teleporting!");
             return true;
         }
         new BukkitRunnable() {
@@ -60,7 +60,7 @@ public final class DeathLocationService implements Listener, CommandExecutor {
                     if (dest != null) {
                         q.teleport(safe(dest));
                     }
-                    q.spigot().sendMessage(ChatMessageType.ACTION_BAR, new TextComponent(ChatColor.GREEN + "Teleportasi berhasil!"));
+                    q.spigot().sendMessage(ChatMessageType.ACTION_BAR, new TextComponent(ChatColor.GREEN + "Teleportation successful!"));
                     q.playSound(q.getLocation(), Sound.ENTITY_ENDERMAN_TELEPORT, 1, 1);
                     busy.remove(id);
                     cancel();

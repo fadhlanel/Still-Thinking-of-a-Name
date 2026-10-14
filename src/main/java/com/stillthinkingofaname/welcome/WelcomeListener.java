@@ -27,14 +27,14 @@ public final class WelcomeListener implements Listener {
         Player q = e.getPlayer();
         bar.join(q);
         q.sendMessage(ChatColor.GOLD + "=======================================");
-        q.sendMessage(ChatColor.AQUA + "  Selamat Datang di " + ChatColor.YELLOW + ChatColor.BOLD + "AestherVale Survival");
+        q.sendMessage(ChatColor.AQUA + "  Welcome to " + ChatColor.YELLOW + ChatColor.BOLD + "AestherVale Survival");
         q.sendMessage(ChatColor.GOLD + "=======================================");
         if (bar.visible(q.getUniqueId())) {
-            q.sendMessage(ChatColor.GRAY + "Tip: Gunakan " + ChatColor.WHITE + "/togglebar" + ChatColor.GRAY + " untuk menyembunyikan HUD Bar.");
+            q.sendMessage(ChatColor.GRAY + "Tip: Use " + ChatColor.WHITE + "/togglebar" + ChatColor.GRAY + " to hide the HUD bar.");
         }
         kit.join(q);
         updates.notifyIfAvailable(q);
-        if (q.isOp() && plugin.getConfig().getBoolean("auto-restart.blindness.enabled", true)) q.sendMessage(ChatColor.YELLOW + "Countdown blindness aktif. Gunakan /sar blindness off untuk mematikannya.");
+        if (q.isOp() && plugin.getConfig().getBoolean("auto-restart.blindness.enabled", true)) q.sendMessage(ChatColor.YELLOW + "Countdown blindness is enabled. Use /sar blindness off to disable it.");
         Firework f = q.getWorld().spawn(q.getLocation(), Firework.class);
         FireworkMeta m = f.getFireworkMeta();
         m.addEffect(FireworkEffect.builder()

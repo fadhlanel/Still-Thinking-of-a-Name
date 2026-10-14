@@ -14,7 +14,7 @@ dependencies {
 }
 
 group = "com.stillthinkingofaname"
-version = "1.1.0"
+version = "1.1.1"
 description = "MasihMikirNamaPlugin"
 java.sourceCompatibility = JavaVersion.VERSION_17
 

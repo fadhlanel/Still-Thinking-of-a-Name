@@ -62,7 +62,7 @@ public final class UpdateChecker implements CommandExecutor {
 
     public void notifyIfAvailable(Player player) {
         if (isUpdateAvailable() && player.hasPermission(UPDATE_PERMISSION)) {
-            player.sendMessage(ChatColor.GOLD + "[MasihMikirNamaPlugin] Versi baru tersedia: " + ChatColor.YELLOW + "v" + latestVersion);
+            player.sendMessage(ChatColor.GOLD + "[MasihMikirNamaPlugin] New version available: " + ChatColor.YELLOW + "v" + latestVersion);
             player.sendMessage(ChatColor.GRAY + "Download: " + ChatColor.WHITE + RELEASE_URL);
         }
     }
@@ -90,14 +90,14 @@ public final class UpdateChecker implements CommandExecutor {
             return true;
         }
         if (latestVersion == null) {
-            sender.sendMessage(ChatColor.YELLOW + "Belum ada informasi versi terbaru. Cek sedang dilakukan.");
+            sender.sendMessage(ChatColor.YELLOW + "Latest version information is not available yet. Checking now.");
             check();
             return true;
         }
         sender.sendMessage(ChatColor.GRAY + "Current version: " + ChatColor.WHITE + "v" + getCurrentVersion());
         sender.sendMessage(ChatColor.GRAY + "Latest version: " + ChatColor.WHITE + "v" + latestVersion);
         if (isUpdateAvailable()) sender.sendMessage(ChatColor.GRAY + "Download: " + ChatColor.WHITE + RELEASE_URL);
-        else sender.sendMessage(ChatColor.GREEN + "Plugin sudah menggunakan versi terbaru.");
+        else sender.sendMessage(ChatColor.GREEN + "Plugin is up to date.");
         return true;
     }
 

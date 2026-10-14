@@ -15,7 +15,7 @@ public final class StarterKitCommand implements TabExecutor {
     @Override
     public boolean onCommand(CommandSender x, Command c, String l, String[] a) {
         if (!(x instanceof Player p)) {
-            x.sendMessage(ChatColor.RED + "Perintah ini hanya bisa digunakan oleh pemain!");
+            x.sendMessage(ChatColor.RED + "This command can only be used by players!");
             return true;
         }
         if (c.getName().equalsIgnoreCase("starterkit")) {

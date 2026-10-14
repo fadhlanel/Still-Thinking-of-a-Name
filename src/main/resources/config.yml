@@ -58,9 +58,9 @@ auto-restart:
 
   # Broadcast warnings in seconds before restart
   messages:
-    "300": "&cServer restart dalam 5 menit."
-    "60": "&cServer restart dalam 1 menit."
-    "10": "&cServer restart dalam 10 detik."
+    "300": "&cServer restart in 5 minutes."
+    "60": "&cServer restart in 1 minute."
+    "10": "&cServer restart in 10 seconds."
     "5": "&cRestarting in 5 seconds"
     "4": "&cRestarting in 4 seconds"
     "3": "&cRestarting in 3 seconds"

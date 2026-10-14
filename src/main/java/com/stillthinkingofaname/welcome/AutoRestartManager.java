@@ -28,7 +28,7 @@ public final class AutoRestartManager {
         for (String time : plugin.getConfig().getStringList("auto-restart.restart-times")) schedule(time, false);
         String once = plugin.getConfig().getString("auto-restart.one-time-restart", "");
         if (!once.isBlank()) try { scheduleAt(parseDate(once), once, true, false); } catch (RuntimeException ignored) { saveOneTime(""); }
-        if (blindnessEnabled()) plugin.getLogger().warning("Countdown blindness is ENABLED. Operators can disable it with /sar blindness off.");
+        if (blindnessEnabled()) plugin.getLogger().warning("Countdown blindness is enabled. Operators can disable it with /sar blindness off.");
     }
     public boolean schedule(String value, boolean announce) { try { return scheduleAt(parseRecurring(value), value, false, announce); } catch (RuntimeException e) { return false; } }
     public boolean scheduleOnce(String value, boolean announce) { try { return scheduleAt(parseOnce(value), value, true, announce); } catch (RuntimeException e) { return false; } }
