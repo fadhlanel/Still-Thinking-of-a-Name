@@ -23,9 +23,9 @@ commands:
     aliases: [sar, simpleautorestart]
     usage: /autorestart <set|once|in|blindness|cancel|resume|clear|status|reload>
     permission: masihmikirnamaplugin.autorestart
-  nmmupdate:
+  mmnupdate:
     description: Check for plugin updates
-    usage: /nmmupdate
+    usage: /mmnupdate
     permission: masihmikirnamaplugin.update
 permissions:
   masihmikirnamaplugin.autorestart:

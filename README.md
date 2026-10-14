@@ -41,7 +41,7 @@ Minecraft server utility plugin for Spigot-compatible servers. Built with Gradle
 | `/sk reset <target>` | Reset starter kit state |
 | `/sk reload` | Reload starter kit configuration |
 | `/autorestart` | Manage scheduled restarts (`in 30m`, `blindness off`) |
-| `/nmmupdate` | Check plugin version and release link |
+| `/mmnupdate` | Check plugin version and release link |
 
 `/autorestart` aliases: `/sar`, `/simpleautorestart`.
 
@@ -67,7 +67,7 @@ Configuration is stored in `src/main/resources/config.yml` and copied to the ser
 
 On startup and every six hours, plugin asynchronously checks GitHub Releases API and logs each check to console. Failed requests are ignored safely. No JAR is downloaded or replaced automatically.
 
-Operators with `masihmikirnamaplugin.update` receive an in-game notice on join when newer release exists. `/nmmupdate` shows current version, latest version, and download link.
+Operators with `masihmikirnamaplugin.update` receive an in-game notice on join when newer release exists. `/mmnupdate` shows current version, latest version, and download link.
 
 Latest releases: https://github.com/fadhlanel/Still-Thinking-of-a-Name/releases/latest
 
